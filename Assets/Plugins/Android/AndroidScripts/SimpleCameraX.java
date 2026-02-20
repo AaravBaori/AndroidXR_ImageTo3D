@@ -68,9 +68,10 @@ public class SimpleCameraX {
     private void bindCamera(ProcessCameraProvider cameraProvider) {
         CameraSelector cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA;
         
-        // Image capture use case
+        // Image capture use case - use JPEG output format
         imageCapture = new ImageCapture.Builder()
             .setCaptureMode(ImageCapture.CAPTURE_MODE_MINIMIZE_LATENCY)
+            .setTargetRotation(android.view.Surface.ROTATION_0)
             .build();
         
         try {
@@ -83,7 +84,6 @@ public class SimpleCameraX {
             
             Log.d(TAG, "Camera bound successfully - ready to capture");
             
-            // Notify Unity camera is ready
             activity.runOnUiThread(() -> {
                 UnityPlayer.UnitySendMessage(
                     "CameraTest",
@@ -113,16 +113,26 @@ public class SimpleCameraX {
                     Log.d(TAG, "Photo captured successfully!");
                     
                     try {
-                        // Convert ImageProxy to JPEG bytes
+                        // Log image format for debugging
+                        int format = image.getFormat();
+                        int planeCount = image.getPlanes().length;
+                        Log.d(TAG, "Image format: " + format + ", planes: " + planeCount);
+                        
+                        // Convert to JPEG
                         byte[] jpegData = imageProxyToJpeg(image);
                         
-                        // Convert to Base64 for Unity
+                        if (jpegData == null) {
+                            Log.e(TAG, "Failed to convert image to JPEG");
+                            return;
+                        }
+                        
+                        // Convert to Base64
                         String base64Image = Base64.encodeToString(jpegData, Base64.NO_WRAP);
                         
                         int width = image.getWidth();
                         int height = image.getHeight();
                         
-                        Log.d(TAG, "Photo: " + width + "x" + height + ", size: " + jpegData.length + " bytes");
+                        Log.d(TAG, "Photo: " + width + "x" + height + ", JPEG size: " + jpegData.length + " bytes");
                         
                         // Send to Unity
                         final String imageData = width + "," + height + "," + base64Image;
@@ -136,6 +146,7 @@ public class SimpleCameraX {
                         
                     } catch (Exception e) {
                         Log.e(TAG, "Error processing image: " + e.getMessage());
+                        e.printStackTrace();
                     } finally {
                         image.close();
                     }
@@ -158,6 +169,57 @@ public class SimpleCameraX {
     }
     
     private byte[] imageProxyToJpeg(ImageProxy image) {
+        try {
+            int format = image.getFormat();
+            int planeCount = image.getPlanes().length;
+            
+            Log.d(TAG, "Converting image - Format: " + format + ", Planes: " + planeCount);
+            
+            // Handle JPEG format (already compressed)
+            if (format == ImageFormat.JPEG) {
+                Log.d(TAG, "Image is already JPEG format");
+                ByteBuffer buffer = image.getPlanes()[0].getBuffer();
+                byte[] bytes = new byte[buffer.remaining()];
+                buffer.get(bytes);
+                return bytes;
+            }
+            
+            // Handle YUV formats (need conversion)
+            if (format == ImageFormat.YUV_420_888 && planeCount >= 3) {
+                Log.d(TAG, "Converting YUV_420_888 to JPEG");
+                return convertYuvToJpeg(image);
+            }
+            
+            // Handle single-plane formats
+            if (planeCount == 1) {
+                Log.d(TAG, "Single plane format, attempting direct read");
+                ByteBuffer buffer = image.getPlanes()[0].getBuffer();
+                byte[] bytes = new byte[buffer.remaining()];
+                buffer.get(bytes);
+                
+                // Try to decode as bitmap and re-encode as JPEG
+                Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                if (bitmap != null) {
+                    ByteArrayOutputStream out = new ByteArrayOutputStream();
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 90, out);
+                    bitmap.recycle();
+                    return out.toByteArray();
+                }
+                
+                return bytes;
+            }
+            
+            Log.e(TAG, "Unsupported image format: " + format + " with " + planeCount + " planes");
+            return null;
+            
+        } catch (Exception e) {
+            Log.e(TAG, "Error converting image: " + e.getMessage());
+            e.printStackTrace();
+            return null;
+        }
+    }
+    
+    private byte[] convertYuvToJpeg(ImageProxy image) {
         ImageProxy.PlaneProxy[] planes = image.getPlanes();
         ByteBuffer yBuffer = planes[0].getBuffer();
         ByteBuffer uBuffer = planes[1].getBuffer();
@@ -179,7 +241,7 @@ public class SimpleCameraX {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         yuvImage.compressToJpeg(
             new Rect(0, 0, image.getWidth(), image.getHeight()), 
-            90, // JPEG quality
+            90,
             out
         );
         
