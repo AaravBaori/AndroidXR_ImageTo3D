@@ -1,0 +1,104 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\aarav\\CpuImages\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7DE43344-751A-3E68-E818-9B7371A9C5D0}|Assembly-CSharp.csproj|C:\\Users\\aarav\\CpuImages\\assets\\scripts\\speechmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DE43344-751A-3E68-E818-9B7371A9C5D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\speechmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\aarav\\CpuImages\\Library\\PackageCache\\com.utilities.audio@6b34d39f1069\\Runtime\\PCMRecordingBehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.utilities.audio@6b34d39f1069\\Runtime\\PCMRecordingBehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\aarav\\CpuImages\\Library\\PackageCache\\com.utilities.audio@6b34d39f1069\\Runtime\\AbstractRecordingBehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.utilities.audio@6b34d39f1069\\Runtime\\AbstractRecordingBehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DE43344-751A-3E68-E818-9B7371A9C5D0}|Assembly-CSharp.csproj|c:\\users\\aarav\\cpuimages\\assets\\scripts\\falclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DE43344-751A-3E68-E818-9B7371A9C5D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\falclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DE43344-751A-3E68-E818-9B7371A9C5D0}|Assembly-CSharp.csproj|C:\\Users\\aarav\\CpuImages\\assets\\scripts\\cameratest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DE43344-751A-3E68-E818-9B7371A9C5D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cameratest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AbstractRecordingBehaviour.cs",
+              "DocumentMoniker": "C:\\Users\\aarav\\CpuImages\\Library\\PackageCache\\com.utilities.audio@6b34d39f1069\\Runtime\\AbstractRecordingBehaviour.cs",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.utilities.audio@6b34d39f1069\\Runtime\\AbstractRecordingBehaviour.cs",
+              "ToolTip": "C:\\Users\\aarav\\CpuImages\\Library\\PackageCache\\com.utilities.audio@6b34d39f1069\\Runtime\\AbstractRecordingBehaviour.cs",
+              "RelativeToolTip": "Library\\PackageCache\\com.utilities.audio@6b34d39f1069\\Runtime\\AbstractRecordingBehaviour.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAAAHEAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T08:55:04.074Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PCMRecordingBehaviour.cs",
+              "DocumentMoniker": "C:\\Users\\aarav\\CpuImages\\Library\\PackageCache\\com.utilities.audio@6b34d39f1069\\Runtime\\PCMRecordingBehaviour.cs",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.utilities.audio@6b34d39f1069\\Runtime\\PCMRecordingBehaviour.cs",
+              "ToolTip": "C:\\Users\\aarav\\CpuImages\\Library\\PackageCache\\com.utilities.audio@6b34d39f1069\\Runtime\\PCMRecordingBehaviour.cs",
+              "RelativeToolTip": "Library\\PackageCache\\com.utilities.audio@6b34d39f1069\\Runtime\\PCMRecordingBehaviour.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T07:24:17.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SpeechManager.cs",
+              "DocumentMoniker": "C:\\Users\\aarav\\CpuImages\\Assets\\Scripts\\SpeechManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SpeechManager.cs",
+              "ToolTip": "C:\\Users\\aarav\\CpuImages\\Assets\\Scripts\\SpeechManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SpeechManager.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T06:25:09.218Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CameraTest.cs",
+              "DocumentMoniker": "C:\\Users\\aarav\\CpuImages\\Assets\\Scripts\\CameraTest.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CameraTest.cs",
+              "ToolTip": "C:\\Users\\aarav\\CpuImages\\Assets\\Scripts\\CameraTest.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CameraTest.cs",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAkwAIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T23:38:12.32Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FalClient.cs",
+              "DocumentMoniker": "C:\\Users\\aarav\\CpuImages\\Assets\\Scripts\\FalClient.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\FalClient.cs",
+              "ToolTip": "C:\\Users\\aarav\\CpuImages\\Assets\\Scripts\\FalClient.cs",
+              "RelativeToolTip": "Assets\\Scripts\\FalClient.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAYwDsAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T09:50:02.068Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

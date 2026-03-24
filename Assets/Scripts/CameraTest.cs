@@ -1,8 +1,11 @@
 ﻿using System;
+//using System.Diagnostics;
+using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
+//using static System.Net.Mime.MediaTypeNames;
 
 public class CameraTest : MonoBehaviour
 {
@@ -24,7 +27,10 @@ public class CameraTest : MonoBehaviour
         UpdateStatus("Initializing...");
 
 #if UNITY_ANDROID && !UNITY_EDITOR
+        //session.enabled = false;
         StartCamera();
+        cameraPlugin.Call("stopCamera");
+        session.enabled = true;
 #else
         UpdateStatus("Android only - won't work in Editor");
 #endif
@@ -38,6 +44,7 @@ public class CameraTest : MonoBehaviour
 
             AndroidJavaClass pluginClass = new AndroidJavaClass("com.test.camerax.SimpleCameraX");
             cameraPlugin = pluginClass.CallStatic<AndroidJavaObject>("getInstance");
+
 
             Debug.Log("Unity: Calling startCamera...");
             cameraPlugin.Call("startCamera");
@@ -79,6 +86,7 @@ public class CameraTest : MonoBehaviour
         try
         {
             Debug.Log("Photo data received, processing...");
+            //Debug.Log(data);
 
             string[] parts = data.Split(',');
             int width = int.Parse(parts[0]);
@@ -97,17 +105,23 @@ public class CameraTest : MonoBehaviour
             }
 
             capturedTexture.LoadImage(imageBytes);
+            capturedTexture.Apply(); // <--- Add this line!
+            //Debug.Log("Can the data be loaded: " + canBeLoaded);
 
             // Display in UI
             if (previewImage != null)
             {
                 previewImage.texture = capturedTexture;
                 previewImage.gameObject.SetActive(true);
+
             }
+
+            Debug.Log("Texture applied. Texture Dimensions: " + previewImage.texture.width + "x" + previewImage.texture.height);
 
             UpdateStatus($"✓ Photo captured!\n{width}x{height}");
             Debug.Log("✓ Photo displayed successfully");
-            session.enabled = true;
+
+            Invoke("delayedStop", 0.1f);
         }
         catch (System.Exception e)
         {
@@ -126,9 +140,11 @@ public class CameraTest : MonoBehaviour
     public void CapturePhoto()
     {
         Debug.Log("=== CapturePhoto() called ===");
-        
+
 
 #if UNITY_ANDROID && !UNITY_EDITOR
+        session.enabled = false;
+        StartCamera();
         if (cameraPlugin == null)
         {
             UpdateStatus("Camera not initialized!");
@@ -138,7 +154,7 @@ public class CameraTest : MonoBehaviour
 
         try
         {
-            session.enabled = false;
+            
             Debug.Log("Triggering photo capture...");
             UpdateStatus("Capturing...");
             cameraPlugin.Call("capturePhoto");
@@ -212,4 +228,11 @@ public class CameraTest : MonoBehaviour
             Destroy(capturedTexture);
         }
     }
+
+    public void delayedStop()
+    {
+        cameraPlugin.Call("stopCamera");
+        session.enabled = true;
+    }
 }
+

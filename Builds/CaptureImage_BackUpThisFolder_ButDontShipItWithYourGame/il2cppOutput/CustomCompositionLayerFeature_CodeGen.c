@@ -1,0 +1,90 @@
+﻿#include "pch-c.h"
+
+
+#include "codegen/il2cpp-codegen-metadata.h"
+
+
+
+
+
+extern void CustomFeature_OnEnable_mD3D9FBB4BC633C92646D50DCF2B13C83C8661639 (void);
+extern void CustomFeature_OnDisable_mCCF55F55B919AC64714348B44A15ED21BBCBAA12 (void);
+extern void CustomFeature_CreateAndRegisterLayerHandler_m5DB50D5E8E6E45E9D61D55F960D433A8FDC311D0 (void);
+extern void CustomFeature__ctor_m8336FD70522199780231F99744017306BE51FCD2 (void);
+extern void CustomQuadLayerData_get_Size_mC1A54A380FA84FB30B3DFCB120C196421AA61F5D (void);
+extern void CustomQuadLayerData_set_Size_m50B86AFD914753E352EBD2A0892F2C100BC32952 (void);
+extern void CustomQuadLayerData_get_ApplyTransformScale_m605A506D919F956524C2CD471AAF016FECA84CBD (void);
+extern void CustomQuadLayerData_set_ApplyTransformScale_m36BAE7E7A66DD0C2204DB7F5EC4607056D1F3235 (void);
+extern void CustomQuadLayerData_GetScaledSize_m88E33B1679F783BFFD777F0C14F20D1E4831FF7D (void);
+extern void CustomQuadLayerData_CopyFrom_m3F1BE053A69FD0CCA3446DDC5D6F3012E434F965 (void);
+extern void CustomQuadLayerData__ctor_m09604D2B89ADC35B3B0BFB8059373A860D536D98 (void);
+extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_m73E6906D1B7B0B9C3F57D40C1B503F09545093ED (void);
+extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_m860ADAE5B3C28AA74A7DF8442D9D2829E62C90BB (void);
+extern void CustomLayerHandler_CreateSwapchain_m7C27A8E9360F08CBEB3149020F23E9F69F6443A4 (void);
+extern void CustomLayerHandler_CreateNativeLayer_mDA4764E70C6A864CF324ED6B292E971717B5A154 (void);
+extern void CustomLayerHandler_ModifyNativeLayer_mDEFCD126084FF7D84EFCB506E1E5CF4C35D7B6A3 (void);
+extern void CustomLayerHandler_ActiveNativeLayer_mCBCB77DF2EFB46C1F825DB077FA8A38EE18A03BF (void);
+extern void CustomLayerHandler__ctor_m84B4770B29C8F8B1AF5202265F7CF616A4C35EA4 (void);
+static Il2CppMethodPointer s_methodPointers[18] = 
+{
+	CustomFeature_OnEnable_mD3D9FBB4BC633C92646D50DCF2B13C83C8661639,
+	CustomFeature_OnDisable_mCCF55F55B919AC64714348B44A15ED21BBCBAA12,
+	CustomFeature_CreateAndRegisterLayerHandler_m5DB50D5E8E6E45E9D61D55F960D433A8FDC311D0,
+	CustomFeature__ctor_m8336FD70522199780231F99744017306BE51FCD2,
+	CustomQuadLayerData_get_Size_mC1A54A380FA84FB30B3DFCB120C196421AA61F5D,
+	CustomQuadLayerData_set_Size_m50B86AFD914753E352EBD2A0892F2C100BC32952,
+	CustomQuadLayerData_get_ApplyTransformScale_m605A506D919F956524C2CD471AAF016FECA84CBD,
+	CustomQuadLayerData_set_ApplyTransformScale_m36BAE7E7A66DD0C2204DB7F5EC4607056D1F3235,
+	CustomQuadLayerData_GetScaledSize_m88E33B1679F783BFFD777F0C14F20D1E4831FF7D,
+	CustomQuadLayerData_CopyFrom_m3F1BE053A69FD0CCA3446DDC5D6F3012E434F965,
+	CustomQuadLayerData__ctor_m09604D2B89ADC35B3B0BFB8059373A860D536D98,
+	UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_m73E6906D1B7B0B9C3F57D40C1B503F09545093ED,
+	UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_m860ADAE5B3C28AA74A7DF8442D9D2829E62C90BB,
+	CustomLayerHandler_CreateSwapchain_m7C27A8E9360F08CBEB3149020F23E9F69F6443A4,
+	CustomLayerHandler_CreateNativeLayer_mDA4764E70C6A864CF324ED6B292E971717B5A154,
+	CustomLayerHandler_ModifyNativeLayer_mDEFCD126084FF7D84EFCB506E1E5CF4C35D7B6A3,
+	CustomLayerHandler_ActiveNativeLayer_mCBCB77DF2EFB46C1F825DB077FA8A38EE18A03BF,
+	CustomLayerHandler__ctor_m84B4770B29C8F8B1AF5202265F7CF616A4C35EA4,
+};
+static const int32_t s_InvokerIndices[18] = 
+{
+	18870,
+	18870,
+	18870,
+	18870,
+	18856,
+	14508,
+	18411,
+	14077,
+	12691,
+	14300,
+	18870,
+	32682,
+	18870,
+	4639,
+	2565,
+	4639,
+	4639,
+	18870,
+};
+IL2CPP_EXTERN_C const Il2CppCodeGenModule g_CustomCompositionLayerFeature_CodeGenModule;
+const Il2CppCodeGenModule g_CustomCompositionLayerFeature_CodeGenModule = 
+{
+	"CustomCompositionLayerFeature.dll",
+	18,
+	s_methodPointers,
+	0,
+	NULL,
+	s_InvokerIndices,
+	0,
+	NULL,
+	0,
+	NULL,
+	0,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+};
